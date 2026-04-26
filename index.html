@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Women Safety App</title>
+
+    <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+    <link rel="stylesheet"
+    href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css"/>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>🛡 SheShield</h2>
+
+    <button onclick="goToLive()">📍 Live Location</button>
+    <button onclick="startNavigation()">🧭 Navigate</button>
+    <button onclick="toggleContact()">👥 Contacts</button>
+
+    <!-- 🔥 NEW ADD -->
+    <div id="routeInfo" class="route-info"></div>
+
+    <div class="bottom-box">✔ Stay Safe, Stay Protected</div>
+</div>
+
+<div id="map"></div>
+
+<form class="search-box" onsubmit="searchLocation(); return false;">
+    <input id="destination" placeholder="Search destination...">
+    <button type="submit">Go</button>
+</form>
+
+<div class="status-card">
+    <b>🟢 You are Safe</b><br>
+    <small>Live tracking active</small>
+</div>
+
+<div class="contact-card" id="contactPanel">
+    <h3>Emergency Contact</h3>
+    <input id="contactNumber" placeholder="91XXXXXXXXXX">
+    <button onclick="saveContact()">Save Contact</button>
+    <button onclick="deleteContact()">Delete Contact</button>
+    <div class="whatsapp-box">🟢 SOS via WhatsApp</div>
+    <button onclick="sendSMS()">Send SMS</button>
+</div>
+
+<div class="location-card" id="locationInfo"></div>
+
+<div class="sos-wrapper">
+    <button id="sosBtn">SOS</button>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
